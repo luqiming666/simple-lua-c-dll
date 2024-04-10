@@ -4,6 +4,7 @@
 .bin
 .tmp
 .Build
+.vs
 
 #VS temp files
 *.suo
@@ -12,7 +13,6 @@
 *.exp
 *.VC.db
 *.vcxproj.user
-*.sln
 
 # Prerequisites
 *.d
@@ -30,7 +30,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+#*.dll
 
 # Fortran module files
 *.mod
@@ -40,9 +40,11 @@
 *.lai
 *.la
 *.a
-*.lib
+#*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+

@@ -5,13 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\contrib">
-      <UniqueIdentifier>{954c60f4-b3b3-4620-ac48-f1dca9d0e0f1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\luacdll.cpp">
@@ -22,16 +15,6 @@
     <None Include="src\luacdll.def">
       <Filter>Source Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="contrib\lauxlib.h">
-      <Filter>Header Files\contrib</Filter>
-    </ClInclude>
-    <ClInclude Include="contrib\lua.h">
-      <Filter>Header Files\contrib</Filter>
-    </ClInclude>
-    <ClInclude Include="contrib\luaconf.h">
-      <Filter>Header Files\contrib</Filter>
-    </ClInclude>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
