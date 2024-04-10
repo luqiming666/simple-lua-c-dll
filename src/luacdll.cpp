@@ -32,10 +32,28 @@ static int forLua_MultTwoNumbers(lua_State *L) {
 
     lua_pushnumber(L, d1 * d2);
 
-	// Just for test
-	MessageBox(NULL, _T("forLua_MultTwoNumbers invoked."), _T("QM"), MB_OK);
-
     return(1); 
+}
+
+static int forLua_ShowMsg(lua_State* L) {
+	const int n = lua_gettop(L);
+	if (n > 0) {
+		int type = lua_type(L, 1); // Ц»ґ¦АнµЪТ»ёцКдИлІОКэ
+		char strMsg[100] = {0};
+
+		if (type == LUA_TNUMBER) {
+			sprintf(strMsg, "%d", lua_tonumber(L, 1));
+			MessageBox(NULL, strMsg, _T("QM"), MB_OK);
+		}
+		else if (type == LUA_TSTRING) {
+			const char* pStr = lua_tostring(L, 1);
+			if (pStr) {
+				MessageBox(NULL, pStr, _T("QM"), MB_OK);
+			}
+		}
+	}
+
+	return(1);
 }
 	
 static int forLua_MultAllNumbers(lua_State *L) {
@@ -62,6 +80,7 @@ static struct luaL_Reg ls_lib[] = {
     {"GetCurrentThreadId", forLua_GetCurrentThreadId},
     {"MultTwoNumbers", forLua_MultTwoNumbers},
     {"MultAllNumbers", forLua_MultAllNumbers},
+	{"ShowMsg", forLua_ShowMsg},
     {nullptr, nullptr}
 };
 
