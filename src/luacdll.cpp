@@ -1,4 +1,4 @@
-//
+п»ї//
 // How to create a Lua-ready DLL
 // http://quik2dde.ru/viewtopic.php?id=18
 //
@@ -38,11 +38,11 @@ static int forLua_MultTwoNumbers(lua_State *L) {
 static int forLua_ShowMsg(lua_State* L) {
 	const int n = lua_gettop(L);
 	if (n > 0) {
-		int type = lua_type(L, 1); // Ц»ґ¦АнµЪТ»ёцКдИлІОКэ
-		char strMsg[100] = {0};
+		int type = lua_type(L, 1); // еЏЄе¤„зђ†з¬¬дёЂдёЄиѕ“е…ҐеЏ‚ж•°
 
 		if (type == LUA_TNUMBER) {
-			sprintf(strMsg, "%d", lua_tonumber(L, 1));
+			char strMsg[100] = { 0 };
+			sprintf(strMsg, "The number is %.2f", lua_tonumber(L, 1));
 			MessageBox(NULL, strMsg, _T("QM"), MB_OK);
 		}
 		else if (type == LUA_TSTRING) {
